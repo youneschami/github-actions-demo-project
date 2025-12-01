@@ -21,9 +21,5 @@ jobs:
           fail_action: false
           issue_title: ""
           cmd_options: "-a"  # active/passive options
-      - name: Upload ZAP JSON
-        uses: actions/upload-artifact@v4
-        with:
-          name: zap-json
-          path: zap/results.json
+      
 
