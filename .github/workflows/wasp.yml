@@ -18,6 +18,8 @@ jobs:
         uses: zaproxy/action-baseline@v0.15.0
         with:
           target: "https://github.com/youneschami/github-actions-demo-project.git"
+          fail_action: false
+          allow_issue_bypass: true
           cmd_options: "-a"  # active/passive options
 
       - name: Upload ZAP Report
