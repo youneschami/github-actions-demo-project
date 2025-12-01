@@ -19,7 +19,6 @@ jobs:
         with:
           target: "https://github.com/youneschami/github-actions-demo-project.git"
           fail_action: false
-          issue_title: ""
           cmd_options: "-a"  # active/passive options
       
 
