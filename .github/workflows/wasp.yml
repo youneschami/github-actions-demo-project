@@ -1,0 +1,30 @@
+name: OWASP ZAP Baseline Scan
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  zap-baseline-scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run ZAP Baseline Scan
+        uses: zaproxy/action-baseline@v0.7.0
+        with:
+          target: "https://github.com/youneschami/github-actions-demo-project.git"
+          rules_file_name: ".zap/rules.tsv"   # optional
+          cmd_options: "-a"  # active/passive options
+          fail_action: true  # fail the workflow on alerts
+
+      - name: Upload ZAP Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: zap-report
+          path: |
+            ./zap-output/*
