@@ -19,7 +19,7 @@ jobs:
         with:
           target: "https://github.com/youneschami/github-actions-demo-project.git"
           fail_action: false
-          allow_issue_bypass: true
+          issue_title: ""
           cmd_options: "-a"  # active/passive options
 
       - name: Upload ZAP Report
