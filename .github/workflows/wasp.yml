@@ -21,10 +21,9 @@ jobs:
           fail_action: false
           issue_title: ""
           cmd_options: "-a"  # active/passive options
-
-      - name: Upload ZAP Report
+      - name: Upload ZAP JSON
         uses: actions/upload-artifact@v4
         with:
-          name: zap-report
-          path: |
-            ./zap-output/*
+          name: zap-json
+          path: zap/results.json
+
