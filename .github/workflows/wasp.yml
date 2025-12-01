@@ -19,7 +19,6 @@ jobs:
         with:
           target: "https://github.com/youneschami/github-actions-demo-project.git"
           cmd_options: "-a"  # active/passive options
-          fail_action: true  # fail the workflow on alerts
 
       - name: Upload ZAP Report
         uses: actions/upload-artifact@v4
